@@ -1,0 +1,187 @@
+<header>
+  <div class="mj-video-holder">
+    <video autoplay
+           loop
+           muted
+           plays-inline
+           class="mj-video"
+           #videPlayer>
+      <source
+        src="assets/carpenter.mp4"
+        type="video/mp4">
+    </video>
+    <div class="mj-video-overlay-dialog">
+      <h2 class="mj-dialog-title">Nameštaj je svuda oko nas.</h2>
+      <h3 class="mj-dialog-title">NEIZBEŽAN JE!</h3>
+      <!--<h3 class="mj-dialog-subtitle"></h3>-->
+      <p class="mj-dialog-text">Svakome je potreban krevet na kome spava, kuhinja u kojoj sprema omiljenu klopu i fijoka
+        za stvarčice, zar ne?!
+        Lepota boli, jednostavnost je sexi, a mi Vam donosimo više stila za manje novca.
+
+      </p>
+      <!--<a class="mj-dialog-btn">-->
+      <!--<span class="fa fa-play-circle-o"></span>-->
+      <!--<span class="mj-dialog-btn-text">Lorem ipsum</span>-->
+      <!--</a>-->
+    </div>
+    <!--<div class="mj-overlay-logo"></div>-->
+    <div class="mj-arrow-btn-holder">
+      <mat-icon [ngx-scroll-to]="'white_cont'">keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+</header>
+<section class="mj-section" #whiteContainer>
+  <div class="mj-section-holder"
+       [@scrollAnimation]="state"
+       id="white_cont">
+    <div class="container">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between stretch"
+           fxLayout.xs="column">
+        <div fxFlex="50"
+             class="mj-section-div">
+          <img src="assets/img/projektovanje_opt.png"
+               alt="">
+        </div>
+        <div fxFlex="50"
+             class="mj-section-div"
+             fxLayout="row">
+          <div>
+            <h3 class="mj-section-title">Projektovanje</h3>
+            <p>
+              Tim arhitekata i dizajnera enterijera sa višegodišnjim iskustvom u projektovanju, dizajniranju i uređenju
+              enterijera mogu Vam pomoći u uređenju doma ili poslovnog prostora i dati Vam idejno rešenje.</p>
+          </div>
+          <div class="mj-section-footer"
+               fxFlexAlign="end">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between center"
+                 class="mj-section-footer-padding">
+              <span></span>
+              <mat-icon
+                routerLink="/projecting"
+                class="mj-section-footer-arrow">
+                arrow_forward_ios
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mj-section mj-grid-layout">
+  <div class="mj-section-holder"
+       fxLayout="row"
+       fxLayoutAlign="stretch"
+       fxLayout.xs="column">
+    <div fxFlex="50"
+         class="mj-section-div mj-kitchen-background mj-on-hover"
+         fxLayout="row">
+      <!--<div class="mj-section-header">-->
+      <!--kuhinje bla bla..-->
+      <!--</div>-->
+      <div class="mj-section-footer">
+        <div fxLayout="row"
+             fxLayoutAlign="space-between center"
+             class="mj-section-footer-padding">
+          <span>KUHINJE</span>
+          <mat-icon
+            routerLink="/kitchens"
+            class="mj-section-footer-arrow">
+            arrow_forward_ios
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50"
+         class="mj-section-div mj-wordart"
+         fxLayout="row">
+      <!--<div class="mj-section-header">-->
+      <!--kuhinje bla bla..-->
+      <!--</div>-->
+    </div>
+    <!--<div fxFlex="50"-->
+    <!--class="mj-section-div">-->
+    <!--<div fxLayout="column"-->
+    <!--fxLayoutAlign="stretch">-->
+    <!--<div fxFlex="50"-->
+    <!--class="mj-section-div mj-livingroom-background mj-on-hover"-->
+    <!--fxLayout="row">-->
+    <!--<div class="mj-section-footer"-->
+    <!--fxFlexAlign="end">-->
+    <!--<div fxLayout="row"-->
+    <!--fxLayoutAlign="space-between center"-->
+    <!--class="mj-section-footer-padding">-->
+    <!--<span>livingroom bla bla..</span>-->
+    <!--<mat-icon-->
+    <!--routerLink="/livingrooms"-->
+    <!--class="mj-section-footer-arrow">-->
+    <!--arrow_forward-->
+    <!--</mat-icon>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div fxFlex="50"-->
+    <!--class="mj-section-div mj-bathroom-background mj-on-hover"-->
+    <!--fxLayout="row">-->
+    <!--<div class="mj-section-footer"-->
+    <!--fxFlexAlign="end">-->
+    <!--<div fxLayout="row"-->
+    <!--fxLayoutAlign="space-between center"-->
+    <!--class="mj-section-footer-padding">-->
+    <!--<span>bathroom bla bla..</span>-->
+    <!--<mat-icon-->
+    <!--routerLink="/bathrooms"-->
+    <!--class="mj-section-footer-arrow">-->
+    <!--arrow_forward-->
+    <!--</mat-icon>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+</section>
+<section class="mj-section mj_news_section">
+  <div class="mj-section-holder">
+    <div class="container">
+      <h2 class="mj-section-title">
+        Novosti
+      </h2>
+      <app-news-card *ngFor="let news of newsConfig" [data]="news"></app-news-card>
+    </div>
+  </div>
+</section>
+<section class="mj-section">
+  <div class="mj-section-holder" id="o-nama">
+    <div class="container">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between stretch"
+           fxLayout.xs="column">
+        <div class="mj-section-div mj-about-us"
+             fxLayout="row">
+          <div>
+            <h3 class="mj-section-title">Ko smo mi?</h3>
+            <p>
+              Kompanija <span class="mj-majorelle-name">Majorelle</span>, sa sedištem u Kragujevcu, bavi se proizvodnjom raznovrsnog asortimana nameštaja po
+              meri za stambene, poslovne i ugostiteljske objekte. Nameštaj koji izrađujemo odlikuje originalan i moderan
+              dizajn i visoki kvalitet izrade uz pristupačne cene.
+            </p>
+            <p>Naš tim čine kvalifikovani, dobro obučeni i stručni radnici koji prate potrebe najzahtevnijih kupaca i
+              izlaze u susret njihovim željama. Na raspolaganju smo da Vam pomognemo u odabiru stila, materijala i boja
+              i da Vam ponudimo jedinstvene ideje za opremanje prostora.</p>
+            <p>Dugogodišnjim radom i iskustvom kompanija <span class="mj-majorelle-name">Majorelle</span> stvorila je prepoznatljiv brend na našem tržištu, a
+              ono po čemu se izdavajamo i što nas čini prepoznatljivim u industriji nameštaja jeste striktno poštovanje
+              datih rokova za izradu nameštaja.</p>
+            <p>Cilj kompanije je konstantno širenje obima i asortimana proizvodnje i usklađivanje sa novim svetskim
+              trendovima i standardima kvaliteta. I u budućnosti ćemo se truditi da zadovoljimo potrebe svakog kupca i
+              nalazimo najpraktičnija rešenja za savremene uslove života.</p>
+            <p>
+              Hvala Vam što ste sa nama svo ovo vreme, a mi ćemo se truditi da i dalje opravdavamo Vaše poverenje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,197 @@
+@import "../sass-files/component-assests";
+
+/// Styling side nav
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  overflow: hidden;
+}
+
+// fixin height when side menu is  opened
+mat-sidenav-container {
+  &.mat-drawer-opened {
+    max-height: 100vh;
+  }
+}
+
+.navigation_menu_left,
+.navigation_menu_right {
+  width: 50vw;
+}
+
+.navigation_menu_left {
+  background-color: $base-color;
+  padding: 20px 0 0 56px;
+
+  @include responsive(sm) {
+    padding: 20px 0 0 6px;
+  }
+
+  .mj-side-nav-close-btn {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: #fff;
+    opacity: .5;
+    transition: opacity .3s ease;
+
+    mat-icon {
+      font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .mj-side-nav-list-wrap {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top: 2rem;
+
+    @include responsive(sm) {
+      display: unset;
+      .mat-list-item {
+        height: 3.2rem !important;
+      }
+    }
+  }
+
+  .mj-side-nav-title {
+    font-size: 3.2rem;
+    font-family: $fancy-font-family;
+    color: #494644;
+    position: relative;
+    padding-bottom: 3rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #494644;
+      width: 4rem;
+      height: 2px;
+    }
+
+    @include responsive(sm) {
+      display: none;
+    }
+  }
+
+  .label {
+    color: $mj-color-white-light;
+    font-family: $side-menu-font-family;
+    font-size: 24px;
+    letter-spacing: $mj-spacing-small;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      color: $mj-secondary-color;
+    }
+
+    @include responsive(sm) {
+      font-size: 1.2rem;
+      a.mat-list-base .mat-list-item {
+        height: 1.2rem !important;
+      }
+    }
+  }
+
+}
+
+.navigation_menu_right {
+  background-color: $base-light-color;
+
+  .sidenav-img-container {
+    height: 100%;
+  }
+
+  .sidenav-img-overlay {
+    display: block;
+    position: relative;
+    @include responsive(sm) {
+      display: none;
+    }
+  }
+
+  .sidenav-img-overlay:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -moz-box-shadow: inset 0 0 3rem 3rem $base-light-color;
+    -webkit-box-shadow: inset 0 0 3rem 3rem $base-light-color;
+    box-shadow: inset 0 0 3rem 3rem $base-light-color;
+  }
+
+  img {
+    width: 40vw;
+    height: auto;
+    max-width: 40vw;
+  }
+}
+
+.is-active .label {
+  color: $mj-secondary-color !important;
+}
+
+/// Styling toolbar header
+.mj-header-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100% !important;
+
+  @include responsive(md) {
+    flex-direction: row-reverse;
+  }
+
+  .mj-ham-btn-text {
+
+    @include responsive(md) {
+      display: none;
+    }
+  }
+
+  .mj-logo-text {
+    transition: all .3s ease;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    height: 6.4rem;
+
+    img {
+      padding-top: 0.4rem;
+      height: 12rem;
+      width: auto;
+
+      display: flex;
+      justify-content: center;
+      transition: all .3s ease;
+
+      @include responsive(sm) {
+        padding-top: 1rem;
+        height: 5.4rem;
+      }
+    }
+  }
+
+  .mj-social-btn-holder {
+
+    @include responsive(md) {
+      display: none;
+    }
+  }
+}

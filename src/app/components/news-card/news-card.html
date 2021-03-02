@@ -1,0 +1,30 @@
+<div class="mj-news-card" fxLayout="row"
+     fxLayoutAlign="space-between"
+     fxLayout.xs="column">
+  <div fxLayoutAlign="center">
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    <!--<img-->
+    <!--[src]="data.img1Url"-->
+    <!--alt="">-->
+  </div>
+  <div class="mj-news-content">
+    <div>
+      <h2>{{data.title}}</h2>
+      <pre>{{data.content}}</pre>
+
+    </div>
+  </div>
+  <!--<div fxFlex="20" fxLayoutAlign="end center">-->
+  <!--<mat-icon-->
+  <!--class="mj-news-arrow"-->
+  <!--routerLink="{{data.navigation}}">-->
+  <!--arrow_forward-->
+  <!--</mat-icon>-->
+  <!--</div>-->
+  <div fxLayoutAlign="end">
+    <ngx-gallery [options]="galleryOptions" [images]="gallery2Images"></ngx-gallery>
+    <!--<img-->
+    <!--[src]="data.img2Url"-->
+    <!--alt=""></div>-->
+  </div>
+</div>

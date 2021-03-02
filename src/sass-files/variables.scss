@@ -1,0 +1,61 @@
+$base-color: #211f1e !default;
+$base-light-color: #292725 !default;
+
+$mj-secondary-color: #bb9a6a !default;
+
+$mj-color-white-light: rgba(#fff, .8) !default;
+$mj-color-white-lighter: rgba(#fff, .6) !default;
+
+$mj-spacing: .8rem !default;
+$mj-spacing-small: .4rem !default;
+$mj-spacing-large: 1.6rem !default;
+
+$font-url: '../assets/fonts/' !default;
+$img-url: '../assets/img/' !default;
+
+$font-family: 'Lato-Light'!default;
+$font-family-light: 'Lato-Light' !default;
+$font-family-bold: 'Lato-Bold' !default;
+
+$fancy-font-family: 'Butler-Regular' !default;
+$fancy-font-family-light: 'Butler-Light' !default;
+$fancy-font-family-bold: 'Butler-Bold' !default;
+
+$side-menu-font-family: 'Abel-Regular' !default;
+
+$mj-top-to-bottom-gradient: linear-gradient(180deg,
+  rgba(0, 0, 0, 1)  0%,
+  rgba(0, 0, 0, .9) 25%,
+  rgba(0, 0, 0, .85)30%,
+  rgba(0, 0, 0, .8) 35%,
+  rgba(0, 0, 0, .75)40%,
+  rgba(0, 0, 0, .7) 45%,
+  rgba(0, 0, 0, .65)50%,
+  rgba(0, 0, 0, .6) 55%,
+  rgba(0, 0, 0, .5) 65%,
+  rgba(0, 0, 0, .4) 75%,
+  rgba(0, 0, 0, .3) 85%,
+  rgba(0, 0, 0, 0) 100%);
+
+$mj-bottom-to-top-gradient: linear-gradient(0deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(0, 0, 0, .9) 25%,
+  rgba(0, 0, 0, .85)30%,
+  rgba(0, 0, 0, .8) 35%,
+  rgba(0, 0, 0, .75)40%,
+  rgba(0, 0, 0, .7) 45%,
+  rgba(0, 0, 0, .65)50%,
+  rgba(0, 0, 0, .6) 55%,
+  rgba(0, 0, 0, .5) 65%,
+  rgba(0, 0, 0, .4) 75%,
+  rgba(0, 0, 0, .3) 85%,
+  rgba(0, 0, 0, 0) 100%);
+
+/// Breakpoint map
+$breakpoint-map : (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xlg': 1200px
+);
+

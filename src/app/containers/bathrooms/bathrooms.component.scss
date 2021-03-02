@@ -1,0 +1,5 @@
+/// Importing sass for component
+@import "../../../sass-files/component-assests";
+
+/// Changing path of images to match path from component
+$img-url: '../../../assets/img/';

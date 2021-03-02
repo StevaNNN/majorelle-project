@@ -1,0 +1,29 @@
+/// Slide down animation
+@keyframes slide-down {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: .6;
+  }
+
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down-on-hover {
+   0% {
+     transform: translateY(10px);
+     opacity: .5;
+   }
+
+   100% {
+     transform: translateY(0px);
+     opacity: 1;
+   }
+ }

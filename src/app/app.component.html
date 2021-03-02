@@ -1,0 +1,126 @@
+<mat-sidenav-container [hasBackdrop]="false"
+                       class="mj-side-nav">
+  <mat-sidenav #leftSideDrawer
+               role="navigation"
+               class="navigation_menu_left">
+
+    <div class="mj-side-nav-close-btn"
+         (click)="toggleSideMenues()">
+      <mat-icon class="mj-side-nav-close-icon">close</mat-icon>
+      <span class="mj-side-nav-close-text">ZATVORI</span>
+    </div>
+
+    <div class="mj-side-nav-list-wrap">
+      <div class="mj-side-nav-title">Sadržaj</div>
+      <mat-nav-list>
+        <a mat-list-item
+           routerLink="/home"
+           routerLinkActive="is-active"
+           [routerLinkActiveOptions]="{exact:true}"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('livingrooms/livingroom_01_opt')">
+          <span class="label">- POČETNA</span>
+        </a>
+        <a mat-list-item
+           routerLink="/livingrooms"
+           routerLinkActive="is-active"
+           [routerLinkActiveOptions]="{exact:true}"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('livingrooms/livingroom_02_opt')">
+          <span class="label">- DNEVNE SOBE</span>
+        </a>
+        <a mat-list-item
+           routerLink="/kitchens"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('kitchens/kitchen_03_opt')">
+          <span class="label">- KUHINJE</span>
+        </a>
+        <a mat-list-item
+           routerLink="/bathrooms"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('bathrooms/bathroom_03_opt')">
+          <span class="label">- KUPATILA</span>
+        </a>
+        <a mat-list-item
+           routerLink="/bedrooms"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('bedrooms/bedroom_01_opt')">
+          <span class="label">- SPAVAĆE SOBE</span>
+        </a>
+        <a mat-list-item
+           routerLink="/office-furniture"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('office-furniture/livingroom_03_opt')">
+          <span class="label">- KANCELARIJSKI NAMEŠTAJ</span>
+        </a>
+        <a mat-list-item
+           routerLink="/firms"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('firms/new_visual_01')">
+          <span class="label">- FIRME</span>
+        </a>
+        <a mat-list-item
+           routerLink="/projecting"
+           routerLinkActive="is-active"
+           (click)="toggleSideMenues()"
+           (mouseover)="onNavigationHover('projektovanje_opt')">
+          <span class="label">- PROJEKTOVANJE</span>
+        </a>
+        <a mat-list-item
+           (click)="toggleSideMenues()"
+           [ngx-scroll-to]="'o-nama'">
+          <span class="label">- O NAMA</span>
+        </a>
+        <a mat-list-item
+           (click)="toggleSideMenues()"
+           [ngx-scroll-to]="'kontakt'">
+          <span class="label">- KONTAKT</span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav position="end"
+               class="navigation_menu_right"
+               #rightSideDrawer>
+    <div fxLayout="column"
+         fxLayoutAlign="center center"
+         class="sidenav-img-container">
+      <div class="sidenav-img-overlay">
+        <img mat-card-image
+             src='assets/img/{{rightSideDrawerImgSrc}}.png'></div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="mj-header-toolbar"
+                 fxLayout="row">
+      <div class="mj-ham-btn" fxFlex="10">
+        <a (click)="toggleSideMenues()">
+          <mat-icon class="mj-ham-btn-icon">menu</mat-icon>
+          <span class="mj-ham-btn-text">Sadržaj</span>
+        </a>
+      </div>
+      <div class="mj-logo-text" fxFlex="80">
+        <img routerLink="ass"
+             src="assets/img/logo_majorelle_croped.png"
+             alt="">
+      </div>
+      <div class="mj-social-btn-holder" fxFlex="10">
+        <a>
+          <span class="fa fa-facebook"></span>
+        </a>
+        <a href="https://www.instagram.com/majorelle_furniture/" target="_blank">
+          <span class="fa fa-instagram"></span>
+        </a>
+      </div>
+    </mat-toolbar>
+    <main id="main_cont">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

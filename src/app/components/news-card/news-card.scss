@@ -1,0 +1,63 @@
+/// Importing sass for component
+@import "../../../sass-files/component-assests";
+
+.mj-news-card {
+  opacity: .5;
+  height: 24rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem;
+  border-bottom: 1px solid $mj-secondary-color;
+  box-sizing: border-box;
+  transition: background-color, opacity .7s ease;
+  word-spacing: .2rem;
+
+  @include responsive(sm) {
+    height: auto;
+  }
+
+  //img {
+  //  height: 20rem;
+  //  width: auto;
+  //}
+
+  &:hover {
+    opacity: 1;
+    background-color: #242425;
+
+    .mj-news-arrow {
+      display: block !important;
+    }
+  }
+
+  .mj-news-content {
+    color: white;
+    font-size: 1.6rem;
+
+    div {
+      padding: 0 1rem 1rem 1rem;
+      text-align: justify;
+      @include responsive(sm) {
+        font-size: 1.2rem;
+      }
+    }
+
+    h2 {
+      color: #6f6f6e;
+      margin: 1rem 0;
+      font-size: 2.4rem;
+    }
+  }
+
+  .mj-news-arrow {
+    display: none;
+    font-size: 3rem;
+    color: $mj-secondary-color;
+    cursor: pointer;
+    animation: slide-down-on-hover .5s ease;
+  }
+}
+
+ngx-gallery /deep/ .ngx-gallery-arrow.ngx-gallery-disabled {
+  display: none;
+}

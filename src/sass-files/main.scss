@@ -1,0 +1,182 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// todo remove this theme import after applyinig scss
+@import "reset";
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "animations";
+
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
+}
+
+/// Importing all fonts
+@include add-fonts($font-family,
+  $font-family-light,
+  $font-family-bold,
+  $side-menu-font-family) {
+  @font-face {
+    font-family: $fancy-font-family;
+    font-weight: normal;
+    src: url('#{$font-url}#{$fancy-font-family}' + '.otf');
+  }
+  @font-face {
+    font-family: $fancy-font-family-light;
+    font-weight: normal;
+    src: url('#{$font-url}#{$fancy-font-family-light}' + '.otf');
+  }
+  @font-face {
+    font-family: $fancy-font-family-bold;
+    font-weight: normal;
+    src: url('#{$font-url}#{$fancy-font-family-light}' + '.otf');
+  }
+}
+
+/// Global styles
+html {
+  font-size: 62.5%;
+}
+
+/// Fixing 16px to our body element for all type of browsers
+body {
+  font-size: 16px;
+  font-family: $font-family, sans-serif;
+}
+
+/// Styling a element
+a {
+  text-decoration: none;
+  color: $mj-color-white-light;
+}
+
+/// Styling hamburger btn in header
+.mj-ham-btn {
+  margin-left: 4rem;
+
+  @include responsive(md) {
+    margin-left: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .mj-ham-btn-icon {
+      font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .mj-ham-btn-text {
+      text-transform: uppercase;
+      margin-left: 1rem;
+      font-size: 1.8rem;
+      letter-spacing: .2rem;
+    }
+  }
+}
+
+/// Stying social buttons
+.mj-social-btn-holder {
+  margin-right: 4rem;
+
+  a {
+    opacity: .5;
+    margin: 0 .5rem;
+    cursor: pointer;
+    transition: opacity .5s ease;
+
+    span {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 2.5rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/// this must be overrideen in main since its third party library
+.mj-side-nav {
+
+  .mat-drawer-inner-container {
+    overflow: hidden!important;
+  }
+
+  .mat-nav-list {
+    padding-top: 3rem!important;
+  }
+
+  .mat-list-item-content {
+    padding: 0 !important;
+  }
+}
+
+.mj-section {
+  padding: 5rem;
+
+  @include responsive(lg) {
+    padding: 3.5rem;
+  }
+
+  @include responsive(md) {
+    padding: 2rem;
+  }
+
+  .mj-section-holder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;;
+    margin: 0 auto;
+    //height: 50rem;
+    max-width: 114rem;
+
+    @include responsive(xlg) {
+      min-height: 30rem;
+    }
+  }
+
+  .mj-section-div {
+    padding: 2rem 1rem;
+    text-align: justify;
+  }
+
+  .mj-section-title {
+    font-size: 3.8rem;
+    font-family: $fancy-font-family;
+    color: $mj-secondary-color;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .mj-section-text {
+    line-height: 2.4rem;
+    color: #333;
+    word-spacing: .3rem;
+    font-family: $font-family-light;
+    font-size: 1.6rem;
+  }
+}

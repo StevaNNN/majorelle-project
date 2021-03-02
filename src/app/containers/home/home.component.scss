@@ -1,0 +1,288 @@
+/// Importing sass for component
+@import "../../../sass-files/component-assests";
+
+/// Changing path of images to match path from component
+$img-url: '../../../assets/img/';
+
+.mj-video-holder {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background: $mj-top-to-bottom-gradient;
+    content: '';
+    height: 50%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    background: $mj-bottom-to-top-gradient;
+    bottom: 0;
+    content: '';
+    height: 50%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .mj-video {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .mj-video-overlay-dialog {
+    color: #fff;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    @include responsive(md) {
+      min-width: 360px;
+    }
+
+    .mj-dialog-title {
+      color: $mj-secondary-color;
+      font-family: $fancy-font-family;
+      font-size: 5.6rem;
+      margin-bottom: 1.5rem;
+
+      @include responsive(md) {
+        font-size: 3.6rem;
+      }
+    }
+
+    .mj-dialog-subtitle {
+      font-family: $side-menu-font-family;
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .mj-dialog-text {
+      font-family: $font-family-light;
+      font-size: 1.7rem;
+      line-height: 2.4rem;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      //max-width: 500px;
+      word-spacing: .2rem;
+
+      @include responsive(md) {
+        display: none;
+      }
+    }
+
+    .mj-dialog-btn {
+      align-items: center;
+      color: $mj-secondary-color;
+      cursor: pointer;
+      display: flex;
+      font-family: $side-menu-font-family;
+      font-size: 2.1rem;
+      justify-content: center;
+
+      .fa {
+        font-size: 4rem;
+      }
+
+      .mj-dialog-btn-text {
+        line-height: 3rem;
+        margin-left: 1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .mj-overlay-logo {
+    background-image: url("#{$img-url}logo_majorelle.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    height: 60%;
+    opacity: .5;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+
+    @include responsive(md) {
+      background-position: bottom center;
+    }
+  }
+
+  .mj-arrow-btn-holder {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+
+    mat-icon {
+      font-size: 8rem;
+      width: 8rem;
+      height: 8rem;
+      transform-origin: top;
+      animation: slide-down 1.6s infinite forwards;
+      color: $mj-color-white-light;
+    }
+  }
+}
+
+.mj-grid-layout {
+  background-color: $base-color;
+  padding: 0;
+  text-align: justify;
+
+  .mj-section-holder {
+    max-width: none;
+    height: 50rem;
+  }
+
+  .mj-section-div {
+    padding: 0;
+
+    div {
+      height: 100%;
+    }
+  }
+
+  .mj-wordart {
+    background-image: url("#{$img-url}word_art.png");
+    background-size: cover;
+  }
+
+  .mj-kitchen-background {
+    background-image: url("#{$img-url}kitchens/kitchen_04_opt.png");
+    background-size: cover;
+  }
+
+  .mj-livingroom-background {
+    background-image: url("#{$img-url}livingrooms/livingroom_04_opt.png");
+    background-size: cover;
+  }
+
+  .mj-bathroom-background {
+    background-image: url("#{$img-url}bathrooms/bathroom_04_opt.png");
+    background-size: cover;
+  }
+
+  .mj-on-hover {
+    opacity: .5;
+    transition: opacity .7s ease;
+    position: relative;
+
+    .mj-section-footer {
+      position: absolute;
+      display: none !important;
+      bottom: 0;
+      height: 7rem;
+      width: 100%;
+      animation: slide-down-on-hover .5s ease;
+
+      .mj-section-footer-padding {
+        padding: 0 3rem;
+
+        span {
+          font-size: 4rem;
+          font-family: $font-family;
+          font-weight: 600;
+        }
+
+        .mat-icon {
+          height: unset;
+          width: unset;
+        }
+      }
+    }
+
+    .mj-section-header {
+      position: absolute;
+      top: 0;
+      height: 5rem;
+      width: 100%;
+      line-height: 5rem;
+      font-size: 3rem;
+      padding: 1rem;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      .mj-section-footer {
+        color: $mj-secondary-color;
+        display: block !important;
+        background-color: rgba(0, 0, 0, .3);
+      }
+    }
+  }
+}
+
+.mj-section-footer-arrow {
+  font-size: 5rem;
+  color: $mj-secondary-color;
+  cursor: pointer;
+  -webkit-transition: -moz-transform .1s ease-out;
+  -moz-transition: -webkit-transform .1s ease-out;
+  -o-transition: -o-transform .1s ease-out;
+  transition: transform .1s ease-out;
+
+  &:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.mj_news_section {
+  background-color: $base-light-color;
+  padding: 0;
+  text-align: justify;
+
+  .mj-section-holder {
+    max-width: none;
+    height: 50rem;
+
+
+    @include responsive(sm) {
+      height: auto;
+    }
+  }
+}
+
+.mj-about-us {
+  p {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .mj-majorelle-name{
+    color: $mj-secondary-color;
+    font-weight: 600;
+  }
+}
+
+#white_cont {
+  .mj-section-div {
+    p {
+      text-align: center;
+      font-size: 2rem;
+      margin: 9rem 0;
+    }
+  }
+}

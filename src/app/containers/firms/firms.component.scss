@@ -1,0 +1,13 @@
+@import "../../../sass-files/component-assests";
+
+.mj-section .mj-section-title {
+  @include responsive(sm) {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+.mj-separator {
+  width: 80%;
+  margin: 2rem auto;
+  border-bottom: 1px solid $mj-secondary-color;
+}

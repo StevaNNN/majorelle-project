@@ -1,0 +1,8 @@
+/// Simple function to retrive true or false
+/// if passed value is number
+/// @author Stevan Stojanovic
+/// @params {number} $value
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}

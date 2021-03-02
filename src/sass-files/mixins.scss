@@ -1,0 +1,53 @@
+/// This file is for mixins, all mixins
+/// that you need for site should be placed here
+
+/// Add all fonts you want
+///
+/// @author Stevan Stojanovic
+///
+/// @param $font-names {string/string's} provide the list of font names/or single font name
+/// in order to embed font with name passed as arguments to this mixin
+
+@mixin add-fonts($font-names...) {
+  @for $i from 1 through length($font-names) {
+    @font-face {
+      font-family: nth($font-names, $i);
+      font-weight: normal;
+      src: url('#{$font-url}#{nth($font-names, $i)}' + '.ttf');
+    }
+
+    @content;
+  }
+}
+
+/// Mixin to reduce repetition of same code for media queries
+/// @author Stevan Stojanovic
+/// @params {String} $key quoted or unquoted value, if you need some custom breakpoint not defined in $map
+///         you should input the number with unit but unquoted in order to achive desired code
+@mixin responsive($key, $map: $breakpoint-map) {
+  
+  @if map-has-key($map, $key) {
+    $key-value: map-get($map, $key);
+    
+    @media only screen and (max-width: $key-value) {
+      @content;
+    }
+  }
+  @else if (is-number($key)) {
+    @media only screen and (max-width: $key) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Either you didn't provide valid key from break point map" +
+          "or you didn't provide a valid type of custom break-point";
+  }
+}
+
+/// Mixin to reduce repetition of same code for media queries
+/// @author Stevan Stojanovic
+@mixin responsive-between($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

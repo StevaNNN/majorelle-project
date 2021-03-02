@@ -1,0 +1,167 @@
+@import "../../../sass-files/component-assests";
+
+$img-url: '../../../assets/img/';
+/// Styling footer
+.mj-footer {
+  padding: 6rem;
+  background-color: $base-color;
+  display: flex;
+  justify-content: center;
+
+  @include responsive(md) {
+    padding: 3rem 1rem 1rem;
+    flex-direction: column;
+  }
+
+  .mj-footer-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3rem 0;
+    color: #fff;
+
+    @include responsive(md) {
+      padding: 1rem 1rem 5rem;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .mj-footer-card-title {
+      text-transform: uppercase;
+      color: #606060;
+      font-family: $font-family-bold;
+      letter-spacing: .2rem;
+      font-size: 1.8rem;
+      padding-bottom: 2rem;
+      max-width: 60%;
+      width: 100%;
+
+      @include responsive(md) {
+        max-width: 100%;
+      }
+    }
+
+    .mj-social-btn-holder {
+      margin: 0;
+      padding-top: 1rem;
+      width: 100%;
+      max-width: 60%;
+
+      @include responsive(md) {
+        max-width: 100%;
+      }
+
+      span {
+        color: $mj-secondary-color;
+      }
+    }
+
+    .mj-footer-card-list {
+      width: 100%;
+      max-width: 60%;
+      display: flex;
+      flex-direction: column;
+
+      @include responsive(md) {
+        max-width: 100%;
+        align-items: center;
+      }
+
+      .mj-footer-card-list-item {
+        line-height: 2rem;
+        font-size: 1.4rem;
+
+        @include responsive(md) {
+          max-width: 35%;
+        }
+      }
+
+      .mj-separator {
+        width: 2rem;
+        margin: 2rem 0;
+        border-bottom: 2px solid #606060;
+      }
+    }
+  }
+}
+
+/// Styling copyright section
+.mj-copyright-section {
+  background-color: $base-color;
+  color: #606060;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .mj-section-holder {
+    width: 100%;
+    display: flex;
+    max-width: 1200px;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+
+    @include responsive(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .mj-copyright {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    line-height: 1.7rem;
+    font-size: 1.4rem;
+    a {
+      margin-left: 1rem;
+    }
+
+    @include responsive(md) {
+      order: 1;
+      text-align: center;
+      justify-content: center;
+      max-width: 50%;
+    }
+  }
+
+  .mj-logo {
+    background-image: url("#{$img-url}logo_majorelle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 120px;
+
+    @include responsive(md) {
+      order: 0;
+      width: 100%;
+      background-position: center;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+/// Styling slide to top btn
+.mj-arrow-up {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  padding: 1rem;
+  background-color: #2a343ad9;
+  cursor: pointer;
+
+  @include responsive(md) {
+    bottom: 8rem;
+  }
+
+  mat-icon {
+    color: #fff;
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
